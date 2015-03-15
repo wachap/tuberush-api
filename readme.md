@@ -4,7 +4,7 @@
 ## Instalación
 
 ```shell
-  $ git clone ""
+  $ git clone "https://github.com/wochap/Keepvid-scrap.git"
   $ cd "keepvid-scrap"
   $ npm install
 ```
