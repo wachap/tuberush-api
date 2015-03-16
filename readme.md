@@ -4,8 +4,8 @@
 ## Instalación
 
 ```shell
-  $ git clone "https://github.com/wochap/Keepvid-scrap.git"
-  $ cd "keepvid-scrap"
+  $ git clone "https://github.com/wochap/tuberush-api.git"
+  $ cd "tuberush-api"
   $ npm install
 ```
 
