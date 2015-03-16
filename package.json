@@ -1,14 +1,14 @@
 {
   "name": "tube-rush",
-  "version": "1.0.0",
-  "description": "App para descargar de manera rapida videos de youtube.",
+  "version": "0.0.1",
+  "description": "Api para descargar videos de youtube.",
   "main": "server.js",
   "scripts": {
     "test": "make test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wochap/Keepvid-scrap"
+    "url": "https://github.com/wochap/tuberush-api"
   },
   "author": "Gean Carlos Bonifacio",
   "license": "ISC",
