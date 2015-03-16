@@ -22,7 +22,5 @@
 ```
 
 ## Uso
-1. La siguiente ruta te retornara un JSON con el titulo y los enlaces de descarga en 480p y 720p.
-	http://localhost:3000/urls/?url=youtubeUrl
-	donde youtubeUrl es la url del video que deseas descargar
+1. La siguiente ruta te retornara un JSON con el titulo y los enlaces de descarga en 480p y 720p. "http://localhost:3000/urls/?url=youtubeUrl" donde youtubeUrl es la url del video que deseas descargar.
 
