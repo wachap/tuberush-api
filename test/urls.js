@@ -1,4 +1,4 @@
-var request = require('supertest');
+var request = require('supertest-as-promised');
 var api = require('../server.js');
 var host = process.env.API_TEST_HOST || api;
 
@@ -16,17 +16,13 @@ describe('Coleccion de Links [/urls]', function() {
 				.get('/urls/?url='+url)
 				.expect(200)				
 				.expect('Content-Type', /application\/json/)
-				.end(function(err, res) { 
-					var body = res.body;
+				.then(function (res) { 
+					body = res.body;
 					
 					expect(body).to.have.property('video');
-
-					video = body.video;
-
-					expect(video).to.have.property('links');
+					expect(body.video).to.have.property('links');
 					done();
-				});
-
+				}, done);
 		});
 
 	});
