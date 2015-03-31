@@ -21,8 +21,10 @@ describe('Coleccion de Links [/urls]', function() {
 					
 					expect(body).to.have.property('video');
 					expect(body.video).to.have.property('links');
-					done();
-				}, done);
+					
+				}, done );
+
+			done();
 		});
 
 	});
