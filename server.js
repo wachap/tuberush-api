@@ -21,8 +21,8 @@ server.use(cors());
 /**
  * Rutas
  */
-var urls = require('./lib/urls');
-server.use(urls);
+var videos = require('./lib/videos');
+server.use(videos);
 
 
 /**
