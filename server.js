@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var cors = require('cors');
 
 /**
  * Local variables
@@ -14,8 +14,9 @@ var server = express();
 /**
  * Middleware
  */
-server.use(bodyParser.json({ type: 'application/*+json' }));
-
+// server.use(bodyParser.urlencoded( {extended: true} ));
+server.use(bodyParser.json('application/json'));
+server.use(cors());
 
 /**
  * Rutas
@@ -30,7 +31,7 @@ server.use(urls);
 if (!module.parent) {
 	server.listen(3000, function () {
 		console.log('escuchando en el puerto 3000');
-	});	
+	});
 } else {
 	module.exports = server;
 };
