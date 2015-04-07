@@ -34,6 +34,7 @@ describe('Coleccion de Links [/videos]', function () {
 					// Propiedades
 					expect(video).to.have.property('id', 'Kyy4VLqCMaQ');
 					expect(video).to.have.property('title', "BEAST - 'Fiction: Intro Movie'");
+					expect(video).to.have.property('downloads', 1);
 
 					done();
 				});

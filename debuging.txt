@@ -1,0 +1,3 @@
+npm install -g node-inspector supervisor forever
+supervisor --debug server.js
+forever /path/node-inspector --web-port=9999
