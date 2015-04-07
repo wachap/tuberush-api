@@ -10,8 +10,11 @@ describe('Coleccion de Links [/videos]', function () {
 		it('deberia registrar un video', function (done) {
 			var data = {
 				"video": {
-					"id": "Kyy4VLqCMaQ",
-					"title": "BEAST - 'Fiction: Intro Movie'"
+					"id": "TcnQdb8BYcY",
+					"url": "https://www.youtube.com/watch?v=TcnQdb8BYcY",
+					"title": "Ed Sheeran - Thinking Out Loud HD (Sub español - ingles)",
+					"iurlsd": "https://i.ytimg.com/vi/TcnQdb8BYcY/sddefault.jpg",
+					"thumbnail_url": "https://i.ytimg.com/vi/TcnQdb8BYcY/default.jpg"
 				}
 			};
 
@@ -32,8 +35,11 @@ describe('Coleccion de Links [/videos]', function () {
 					video = body.video;
 
 					// Propiedades
-					expect(video).to.have.property('id', 'Kyy4VLqCMaQ');
-					expect(video).to.have.property('title', "BEAST - 'Fiction: Intro Movie'");
+					expect(video).to.have.property('id', 'TcnQdb8BYcY');
+					expect(video).to.have.property('url', 'https://www.youtube.com/watch?v=TcnQdb8BYcY');					
+					expect(video).to.have.property('title', "Ed Sheeran - Thinking Out Loud HD (Sub español - ingles)");
+					expect(video).to.have.property('iurlsd', 'https://i.ytimg.com/vi/TcnQdb8BYcY/sddefault.jpg');
+					expect(video).to.have.property('thumbnail_url', 'https://i.ytimg.com/vi/TcnQdb8BYcY/default.jpg');
 					expect(video).to.have.property('downloads', 1);
 
 					done();
