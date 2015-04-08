@@ -1,28 +1,17 @@
 /**
  * Dependencies
  */
-var express = require('express');
-var bodyParser = require('body-parser');
-var cors = require('cors');
+var http = require('http');
+var ExpressServer = require('./lib/expressServer');
+var socketIO = require('./lib/socketIO');
+
 
 /**
  * Local variables
  */
-var server = express();
-
-
-/**
- * Middleware
- */
-// server.use(bodyParser.urlencoded( {extended: true} ));
-server.use(bodyParser.json('application/json'));
-server.use(cors());
-
-/**
- * Rutas
- */
-var videos = require('./lib/videos');
-server.use(videos);
+var app = new ExpressServer();
+var server = http.createServer(app.expressServer);
+var Io  = new socketIO({server:server});
 
 
 /**
