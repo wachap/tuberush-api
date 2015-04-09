@@ -36,7 +36,7 @@ describe('Coleccion de Links [/videos]', function () {
 
 					// Propiedades
 					expect(video).to.have.property('id', 'TcnQdb8BYcY');
-					expect(video).to.have.property('url', 'https://www.youtube.com/watch?v=TcnQdb8BYcY');					
+					expect(video).to.have.property('url', 'https://www.youtube.com/watch?v=TcnQdb8BYcY');
 					expect(video).to.have.property('title', "Ed Sheeran - Thinking Out Loud HD (Sub español - ingles)");
 					expect(video).to.have.property('iurlsd', 'https://i.ytimg.com/vi/TcnQdb8BYcY/sddefault.jpg');
 					expect(video).to.have.property('thumbnail_url', 'https://i.ytimg.com/vi/TcnQdb8BYcY/default.jpg');
@@ -49,7 +49,7 @@ describe('Coleccion de Links [/videos]', function () {
 
 	describe('GET', function () {
 		it('deberia obtener informacion de un video', function (done) {
-			this.timeout(8000);
+			this.timeout(10000);
 			var id = "qp6E17m7DR8";
 			var url = "https://www.youtube.com/watch?v="+id;
 
