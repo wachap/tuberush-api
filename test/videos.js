@@ -4,7 +4,7 @@ var host = process.env.API_TEST_HOST || api;
 
 request = request(host);
 
-describe('Coleccion de Links [/videos]', function () {
+describe('Coleccion de Videos [/videos]', function () {
 
 	describe('POST', function () {
 		it('deberia registrar un video', function (done) {
