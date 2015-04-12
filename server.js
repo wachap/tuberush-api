@@ -19,7 +19,7 @@ var Io  = new socketIO({server:server});
  */
 if (!module.parent) {
 	server.listen(3000, function () {
-		console.log('escuchando en el puerto 3000');
+		console.log('escuchando en el puerto ' + server.address().port);
 	});
 } else {
 	module.exports = server;
