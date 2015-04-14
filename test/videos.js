@@ -50,7 +50,7 @@ describe('Coleccion de Videos [/videos]', function () {
 	describe('GET', function () {
 		it('deberia obtener informacion de un video', function (done) {
 			this.timeout(10000);
-			var id = "qp6E17m7DR8";
+			var id = "TcnQdb8BYcY";
 			var url = "https://www.youtube.com/watch?v="+id;
 
 			request
@@ -74,6 +74,55 @@ describe('Coleccion de Videos [/videos]', function () {
 
 					done(err);
 				});
+		});
+	});
+
+	describe('GET', function () {
+		it('deberia obtener 1 video de la bd', function (done) {
+			var id;
+			var data = {
+				"video": {
+					"id": "TcnQdb8BYcY",
+					"url": "https://www.youtube.com/watch?v=TcnQdb8BYcY",
+					"title": "Ed Sheeran - Thinking Out Loud HD (Sub español - ingles)",
+					"iurlsd": "https://i.ytimg.com/vi/TcnQdb8BYcY/sddefault.jpg",
+					"thumbnail_url": "https://i.ytimg.com/vi/TcnQdb8BYcY/default.jpg"
+				}
+			};
+
+			request
+				.post('/videos')
+				.set('Accept', 'application/json')
+				.send(data)
+				.expect(201)
+				.expect('Content-Type', /application\/json/)
+			.then(function getData (res) {
+				id = res.body.video.id;
+
+				return request.get('/videos/' + id)
+					.set('Accept', 'application/json')
+					.send()
+					.expect(200)
+					.expect('Content-Type', /application\/json/)
+			}, done)
+			.then(function assertions (res) {
+				var video;
+				var body = res.body
+
+				// Video existe
+				expect(body).to.have.property('videos');
+				video = body.videos;
+				console.log('GET /videos/' + id, body);
+
+				// Propiedades
+				expect(video).to.have.property('id', 'TcnQdb8BYcY');
+				expect(video).to.have.property('url', 'https://www.youtube.com/watch?v=TcnQdb8BYcY');
+				expect(video).to.have.property('title', "Ed Sheeran - Thinking Out Loud HD (Sub español - ingles)");
+				expect(video).to.have.property('iurlsd', 'https://i.ytimg.com/vi/TcnQdb8BYcY/sddefault.jpg');
+				expect(video).to.have.property('thumbnail_url', 'https://i.ytimg.com/vi/TcnQdb8BYcY/default.jpg');
+
+				done();
+			}, done);
 		});
 	});
 
